@@ -45,18 +45,30 @@
         </form>
 
         <div class="shopping-cart">
+            <form action="" method="post" name="google-sheet">
+                <!-- <div class="box">
+                </div> -->
 
-            <!-- <div class="box">
+                <div class="total">
+                    <span>Total - <span class="total-price">Rs. 0</span></span>
+                </div>
 
-            </div> -->
+                <input type="text" placeholder="Enter your name" class="inputnwa" name="Name">
 
 
-            <div class="total">
-                <span>Total - <span class="total-price">Rs. 0</span></span>
-            </div>
-            <div class="checkout">
-                <a href="#" class="btn">checkout</a>
-            </div>
+                <input type="number" placeholder="WhatsApp No. we will share bill" class="inputnwa" name="Whatsapp">
+
+
+                <textarea name="Address" id="" cols="30" rows="3"
+                    placeholder="Enter your - D.No, Street Name, Area Name, City, District Name - pincode."
+                    class="inputnwa"></textarea>
+
+                <br>
+                <div class="">
+                    <button class="btn checkout" name="submit">checkout</button>
+                </div>
+
+            </form>
 
         </div>
 
@@ -389,6 +401,18 @@
     <!-- custom js file link  -->
     <script src="js/script.js"></script>
 
+    <!-- cart data -->
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyuFaYh4c1H954XZ49B-hpLKbIYLQorxPmucxELqenZHQ9crcQUTGweOADvIddcYGPv/exec'
+        const form = document.forms['google-sheet']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
 </body>
 
 </html>
