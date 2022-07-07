@@ -65,6 +65,28 @@ section {
     background: none;
 }
 
+.checkout {
+    width: 94%;
+}
+
+.inputnwa {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    border: 1px solid var(--black);
+    color: var(--black);
+    width: 95%;
+    margin-left: 7px;
+}
+
+.inputnwa:focus {
+    border-color: var(--black);
+    box-shadow: 0 0 2px 1px var(--black);
+    color: var(--black);
+}
+
 .btn:hover {
     background: var(--orange);
     color: #fff;
