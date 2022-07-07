@@ -16,14 +16,14 @@ document.querySelector('#cart-btn').onclick = () => {
   navbar.classList.remove('active');
 }
 
-let loginForm = document.querySelector('.login-form');
+// let loginForm = document.querySelector('.login-form');
 
-document.querySelector('#login-btn').onclick = () => {
-  loginForm.classList.toggle('active');
-  searchForm.classList.remove('active');
-  shoppingCart.classList.remove('active');
-  navbar.classList.remove('active');
-}
+// document.querySelector('#login-btn').onclick = () => {
+//   loginForm.classList.toggle('active');
+//   searchForm.classList.remove('active');
+//   shoppingCart.classList.remove('active');
+//   navbar.classList.remove('active');
+// }
 
 let navbar = document.querySelector('.navbar');
 
@@ -37,7 +37,7 @@ document.querySelector('#menu-btn').onclick = () => {
 window.onscroll = () => {
   searchForm.classList.remove('active');
   shoppingCart.classList.remove('active');
-  loginForm.classList.remove('active');
+  // loginForm.classList.remove('active');
   navbar.classList.remove('active');
 }
 
@@ -163,8 +163,8 @@ function addProductToCart(title, price, productImg) {
   var cartBoxContent = `
                 <img src="${productImg}" alt="" class="cart-img">
                 <div class="content">
-                    <h3 class="cart-product-title">${title}</h3>
-                    <span class="quantity">qty : <input type="number" value="1" class="cart-quantity"> Kg</span>
+                    <h3 class="cart-product-title" name="Cart">${title}</h3>
+                    <span class="quantity">qty : <input type="number" value="1" class="cart-quantity" name="Quantity"> Kg</span>
                     <br><br>
                     <span class="price cart-price">${price}</span>
                 </div>
