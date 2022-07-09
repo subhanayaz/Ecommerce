@@ -12,7 +12,7 @@ let shoppingCart = document.querySelector('.shopping-cart');
 document.querySelector('#cart-btn').onclick = () => {
   shoppingCart.classList.toggle('active');
   searchForm.classList.remove('active');
-  loginForm.classList.remove('active');
+  // loginForm.classList.remove('active');
   navbar.classList.remove('active');
 }
 
@@ -168,7 +168,8 @@ function addProductToCart(title, price, productImg) {
                     <br><br>
                     <span class="price cart-price">${price}</span>
                 </div>
-                <i class="fas fa-trash"></i>`;
+                <i class="fas fa-trash"></i>            
+                `;
 
   cartShopBox.innerHTML = cartBoxContent;
   cartItems.append(cartShopBox);
@@ -196,3 +197,13 @@ function updatetotal() {
     document.getElementsByClassName('total-price')[0].innerText = "Rs. " + total;
   }
 }
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwSXe_ukc5FLx0g3XOjtD1y51eF3x6T43DM5F58xu2UM2ZlCoxz_PiOjtoWu_l6UNdb/exec'
+const form = document.forms['google-sheet']
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+    .then(response => alert("Thanks❤ Your order has been placed😍. You will be receiving the updates through Whatsapp.."))
+    .catch(error => alert("Error!", error.message))
+})
