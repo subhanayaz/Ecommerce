@@ -64,12 +64,12 @@
                     class="inputnwa"></textarea>
 
                 <br>
-                <div class="">
-                    <button class="btn checkout" name="submit">checkout</button>
-                </div>
+
+                <!-- <button class="btn checkout" name="submit">checkout</button> -->
+                <input type="submit" name="submit" class="btn checkout">
+
 
             </form>
-
         </div>
 
         <form action="" class="login-form">
@@ -398,21 +398,11 @@
 
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
-    <!-- custom js file link  -->
-    <script src="js/script.js"></script>
 
     <!-- cart data -->
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbyuFaYh4c1H954XZ49B-hpLKbIYLQorxPmucxELqenZHQ9crcQUTGweOADvIddcYGPv/exec'
-        const form = document.forms['google-sheet']
 
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => console.log('Success!', response))
-                .catch(error => console.error('Error!', error.message))
-        })
-    </script>
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
 </body>
 
 </html>
